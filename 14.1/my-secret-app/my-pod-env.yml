@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-env-pod
+spec:
+  containers:
+    - name: test-container-env
+      image: k8s.gcr.io/busybox
+      command: [ "/bin/sh", "-c", "printenv | grep NETOLOGY_" ]
+      envFrom:
+      - secretRef:
+          name: credentials
+  restartPolicy: Never
