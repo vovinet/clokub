@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  creationTimestamp: "2022-03-31T19:48:55Z"
+  name: netology
+  namespace: my-app-prod
+  resourceVersion: "12689493"
+  uid: b566f2f3-0df2-4af6-ac56-e22754c73319
+secrets:
+- name: netology-token-jjnr6
