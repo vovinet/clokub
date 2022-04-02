@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-hvac-app
+  name: my-hvac-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-hvac-app
+  template:
+    metadata:
+      labels:
+        app: my-hvac-app
+    spec:
+      containers:
+      - image: vovinet/14-2-my-hvac-app
+        imagePullPolicy: Always
+        name: 14-2-my-hvac-app
+        envFrom:
+        - configMapRef:
+            name: my-hvac-app-cm

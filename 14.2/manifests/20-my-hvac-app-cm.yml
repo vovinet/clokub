@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-hvac-app-cm
+data:
+  VAULT_URL: 'http://vault:8200'
+  VAULT_TOKEN: 'aiphohTaa0eeHei'

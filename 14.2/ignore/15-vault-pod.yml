@@ -3,6 +3,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: 14.2-netology-vault
+  labels:
+    app: vault-app
 spec:
   containers:
   - name: vault

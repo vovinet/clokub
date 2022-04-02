@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: vault-sc
+spec:
+  selector:
+    matchLabels:
+      app: vault
+  serviceName: "vault"
+  replicas: 1
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        app: vault
+    spec:
+      containers:
+      - name: vault
+        image: vault
+        ports:
+        - containerPort: 8200
+          protocol: TCP
+        env:
+        - name: VAULT_DEV_ROOT_TOKEN_ID
+          value: "aiphohTaa0eeHei"
+        - name: VAULT_DEV_LISTEN_ADDRESS
+          value: 0.0.0.0:8200
